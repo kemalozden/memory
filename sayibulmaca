@@ -1,0 +1,34 @@
+package UDEMY;
+
+import java.util.Scanner;
+
+public class SayiBul {
+
+	public static void main(String[] args) {
+
+		int a = (int) (Math.random() * 100 + 1);
+
+		Scanner scr = new Scanner(System.in);
+		System.out.println("=======================");
+		System.out.println("   Sayi bulmaca oyunu");
+		System.out.println("=======================");
+		System.out.println("Bilgisayar 1-100 arasinda rast gele bir kelime tuttu \nlutfen bu sayiyi tahmin ediniz...");
+		System.out.print("Tahminizi yaziniz: ");
+		int b = scr.nextInt();
+		if (b == a)
+			System.out.println(" Tebrikler, 1 denemede bildiniz! ");
+		int c = 1;
+		do {
+			c++;
+			if (b < a) {
+				System.out.print("daha buyuk bir sayi giriniz:");
+			} else if (b > a) {
+				System.out.print("daha kucuk bir sayi giriniz:");
+			}
+			b = scr.nextInt();
+		} while (b != a);
+		if (b == a) {
+			System.out.println("Tebrikler," + c + " Denemede Bildiniz !");
+		}
+	}
+}
